@@ -4,13 +4,25 @@
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
 
 raw_schedule_table:
-  type: ParquetDataSet
+  type: kedro.extras.datasets.pandas.ParquetDataSet
   filepath: data/01_raw/raw_schedule_table.parquet
 
 raw_boxscores:
-  type: ParquetLocalDataSet
+  type: kedro.extras.datasets.pandas.ParquetDataSet
   filepath: data/01_raw/raw_boxscores.parquet
 
 raw_injury_data:
-  type: ParquetLocalDataSet
+  type: kedro.extras.datasets.pandas.ParquetDataSet
   filepath: data/01_raw/raw_injury_data.parquet
+
+int_schedule_table:
+  type: kedro.extras.datasets.pandas.ParquetDataSet
+  filepath: data/02_int/int_schedule_table.parquet
+
+int_boxscores:
+  type: kedro.extras.datasets.pandas.ParquetDataSet
+  filepath: data/02_int/int_boxscores.parquet
+
+int_injury_data:
+  type: kedro.extras.datasets.pandas.ParquetDataSet
+  filepath: data/02_int/int_injury_data.parquet

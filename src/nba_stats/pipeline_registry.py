@@ -31,7 +31,7 @@ from typing import Dict
 
 from kedro.pipeline import Pipeline
 
-from pipelines.scrape_data import scrape_data_pipeline
+from nba_stats.raw.scrape_data import scrape_data_pipeline
 
 
 def register_pipelines() -> Dict[str, Pipeline]:
@@ -40,7 +40,7 @@ def register_pipelines() -> Dict[str, Pipeline]:
     Returns:
         A mapping from a pipeline name to a ``Pipeline`` object.
     """
-    default = scrape_data_pipeline
-    return {"__default__": scrape_data_pipeline,
-    "scrape_data":scrape_data_pipeline,
+    default = scrape_data_pipeline()
+    return {"__default__": default,
+    "scrape_data":scrape_data_pipeline(),
     }
