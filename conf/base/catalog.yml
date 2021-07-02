@@ -2,3 +2,15 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+
+raw_schedule_table:
+  type: ParquetDataSet
+  filepath: data/01_raw/raw_schedule_table.parquet
+
+raw_boxscores:
+  type: ParquetLocalDataSet
+  filepath: data/01_raw/raw_boxscores.parquet
+
+raw_injury_data:
+  type: ParquetLocalDataSet
+  filepath: data/01_raw/raw_injury_data.parquet
