@@ -2,6 +2,8 @@ import time
 from functools import partial
 from typing import List
 
+from kedro.pipeline import node, Pipeline
+
 import numpy as np
 import pandas as pd
 import requests
@@ -165,3 +167,31 @@ def scrape_injury_data() -> pd.DataFrame:
     )
     tmp.columns = ["date", "pos", "player", "injury", "status"]
     return tmp
+
+def scrape_data_pipeline() -> Pipeline:
+    return Pipeline(
+            nodes=[
+                node(
+                    func=scrape_all_schedule_tables,
+                    inputs="parameters",
+                    outputs="raw_schedule_table",
+                    name="scrape all schedule tables",
+                    tags=["schedule_creation"],
+                ),
+                node(
+                    func=scrape_all_boxscores,
+                    inputs="intermediate_schedule_table",
+                    outputs="raw_boxscores",
+                    name="scrape all boxscores",
+                    tags=["boxscore_creation"],
+                ),
+                node(
+                    func=scrape_injury_data,
+                    inputs=None,
+                    outputs="raw_injury_data",
+                    name="scrape injury data",
+                    tags=["injury_data_creation"],
+                ),
+            ],
+            tags=["data_creation"],
+        )
