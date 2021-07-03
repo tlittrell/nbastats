@@ -215,4 +215,3 @@ wrapt==1.12.1
 xlrd==1.2.0
 XlsxWriter==1.4.3
 zict==2.0.0
-

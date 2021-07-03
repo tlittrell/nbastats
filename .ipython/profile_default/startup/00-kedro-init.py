@@ -36,7 +36,7 @@ def reload_kedro(path, line=None, env: str = None, extra_params: Dict[str, Any] 
     global session
 
     try:
-        import kedro.config.default_logger
+        import kedro.config.default_logger  # noqa
         from kedro.framework.cli.jupyter import collect_line_magic
         from kedro.framework.session import KedroSession
         from kedro.framework.session.session import _activate_session
