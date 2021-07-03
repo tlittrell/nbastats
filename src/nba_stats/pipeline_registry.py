@@ -31,7 +31,7 @@ from typing import Dict
 
 from kedro.pipeline import Pipeline
 
-from nba_stats.raw.scrape_data import scrape_data_pipeline
+from nba_stats.int.scrape_data import scrape_data_pipeline
 
 
 def register_pipelines() -> Dict[str, Pipeline]:
