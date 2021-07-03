@@ -41,6 +41,7 @@ def register_pipelines() -> Dict[str, Pipeline]:
         A mapping from a pipeline name to a ``Pipeline`` object.
     """
     default = scrape_data_pipeline()
-    return {"__default__": default,
-    "scrape_data":scrape_data_pipeline(),
+    return {
+        "__default__": default,
+        "scrape_data": scrape_data_pipeline(),
     }
