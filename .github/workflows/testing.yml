@@ -23,10 +23,13 @@ jobs:
           # This path is specific to Ubuntu
           path: ~/.cache/pip
           # Look to see if there is a cache hit for the corresponding requirements file
-          key: ${{ runner.os }}-pip2-${{ hashFiles('src/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('src/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: |
-          pip install -r src/requirements.txt
+          pip install --no-cache-dir -r src/requirements.txt
       - name: Test with pytest
         run: |
           pytest
