@@ -29,6 +29,7 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         run: |
+          pwd
           python -m pip install --upgrade pip
           kedro install
       - name: Test with pytest
