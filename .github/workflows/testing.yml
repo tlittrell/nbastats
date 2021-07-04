@@ -30,6 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           pwd
+          ls -la
           python -m pip install --upgrade pip
           kedro install
       - name: Test with pytest
