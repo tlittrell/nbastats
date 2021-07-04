@@ -3,6 +3,7 @@ anyconfig==0.10.1
 appdirs==1.4.4
 appnope==0.1.2
 arrow==1.1.1
+attrs==21.2.0
 backcall==0.2.0
 beautifulsoup4==4.9.3
 binaryornot==0.4.4
@@ -13,6 +14,7 @@ cfgv==3.3.0
 chardet==4.0.0
 click==7.1.2
 cookiecutter==1.7.3
+coverage==5.5
 decorator==5.0.9
 distlib==0.3.2
 dynaconf==3.1.4
@@ -36,6 +38,7 @@ grpcio==1.38.1
 h11==0.12.0
 identify==2.2.10
 idna==2.10
+iniconfig==1.1.1
 ipython==7.25.0
 ipython-genutils==0.2.0
 jedi==0.18.0
@@ -69,6 +72,7 @@ prompt-toolkit==3.0.19
 proto-plus==1.19.0
 protobuf==3.17.3
 ptyprocess==0.7.0
+py==1.10.0
 pyarrow==3.0.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
@@ -77,6 +81,8 @@ pydantic==1.8.2
 pydata-google-auth==1.2.0
 Pygments==2.9.0
 pyparsing==2.4.7
+pytest==6.2.4
+pytest-cov==2.12.1
 python-dateutil==2.8.1
 python-json-logger==2.0.1
 python-slugify==5.0.2
@@ -107,19 +113,3 @@ virtualenv==20.4.7
 wcwidth==0.2.5
 xlrd==1.2.0
 XlsxWriter==1.4.4
-black==21.5b1
-flake8>=3.7.9, <4.0
-ipython~=7.0
-isort~=5.0
-jupyter~=1.0
-jupyter_client>=5.1, <7.0
-jupyterlab~=3.0
-kedro-telemetry~=0.1.0
-kedro-viz~=3.1
-nbstripout~=0.4
-pytest-cov~=2.5
-pytest-mock>=1.7.1, <2.0
-pytest~=6.2
-scikit-learn~=0.24
-wheel>=0.35, <0.37
-pytest==6.2.4
