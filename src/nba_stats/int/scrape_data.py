@@ -84,6 +84,8 @@ def scrape_single_boxscore(
     Get a dataframe with the player boxscores for a given game on the schedule.
     """
 
+    log.info(f"Scraping boxscore for {home_team} v. {visitor_team} on {date}")
+
     def include_schedule_info(
         df: pd.DataFrame, team: str, opponent: str, points: int, date: np.datetime64
     ) -> pd.DataFrame:
