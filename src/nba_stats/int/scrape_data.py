@@ -1,4 +1,5 @@
 import datetime
+import logging
 import time
 import unicodedata
 from functools import partial
@@ -11,11 +12,14 @@ from bs4 import BeautifulSoup
 from kedro.pipeline import Pipeline, node
 from toolz.functoolz import pipe
 
+log = logging.getLogger("rich")
+
 
 def scrape_all_schedule_tables(parameters: dict) -> pd.DataFrame:
     schedule_tables = parameters["schedule_tables_to_scrape"]
     schedules = []
     for season, month in schedule_tables:
+        log.info(f"scraping schedule for {season} {month}")
         url = (
             f"https://www.basketball-reference.com/leagues/NBA_{season}_games-"
             f"{month.lower()}.html"

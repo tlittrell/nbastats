@@ -113,3 +113,4 @@ virtualenv==20.4.7
 wcwidth==0.2.5
 xlrd==1.2.0
 XlsxWriter==1.4.4
+rich==10.4.0
